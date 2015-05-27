@@ -94,7 +94,7 @@ for ( i=0;i<kol;i++)
 	 }
 
 
-
+//testowy komentarz
 
 }
 
