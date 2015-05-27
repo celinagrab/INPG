@@ -1,4 +1,4 @@
-#include<iostream.h> //sortowanie tablicy 2d
+#include<iostream.h> //sortowanie tablicy dwuwymiarowej
 #include<stdlib.h>
 main()
 {
