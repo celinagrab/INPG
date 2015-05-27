@@ -1,0 +1,50 @@
+#include<iostream> //losowanie bez poetorzen
+#include<cstdlib>
+#include<ctime>
+ 
+using namespace std;
+ 
+int main()
+{
+int IL,los;
+do
+{
+cout<<"Podaj z jakiego zakresu maja byc losowane liczby "<<endl;
+cin>>IL; //IL oznacza liczbe liczb, jaka chcemy wylosowac.
+ 
+cout<<endl<<"Ile liczb chcesz wylosowac?"<<endl;
+cin>>los;//los to zakres liczb które chcemy wylosowac
+ 
+cout<<endl<<endl<<endl;
+system("cls");
+} while(IL<los);
+ 
+int *T,i;
+T = (int*)malloc(IL * sizeof(int)); //zaalokuj pamiec na pule liczb do wylosowania
+for (i=0; i<IL; i++)
+{
+T[i]=i+1;//Przypisanie do tablicy z której bedziemy losowac liczby
+}
+ 
+srand(time(0)); //Zainicjowanie genereatora liczb losowych
+ 
+int *t,a;
+t = (int*)malloc(los * sizeof(int)); //zaalokuj pamiec na pule liczb wylosowanych
+for (i=0; i<los; i++)
+{
+a=(rand()%IL); //wylosuj liczbe
+t[i]=T[a];
+ 
+/* jezeli liczba zostaje wylosowana zostaje wyrzucona z obiegu w ten sposób, ze na jej
+miejsce trafia ostatnia z puli liczb do wylosowania a wielkosc puli zostaje zminiejszona*/
+T[a]=T[IL-1];
+IL--;
+ 
+cout<<t[i]<<" "; //wypisz wylosowana liczbe
+}
+ 
+cout<<endl;
+system("pause");
+return EXIT_SUCCESS;
+
+}
